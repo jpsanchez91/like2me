@@ -1,0 +1,36 @@
+<template name="picture">
+<div class="ui modal" id="modalimagem">
+  <i class="close icon"></i>
+  <div class="header">
+    Utilize pontos
+  </div>
+<table class="ui blue table">
+{{#each Pictures}}
+<tr>
+	<td>
+	<div class="ui card">
+		<div class="ui slide masked reveal image">
+			<img class="ui rounded image" src="{{link}}">
+		 </div>
+		 <div class="content">
+			<div class="ui icon top left pointing dropdown animated fade inverted blue  button" id="dropdownbutton" tabindex="0">
+				<div class="visible content">Chosse that picture</div>
+				<div class="hidden content">
+					Yes!
+				</div>
+				 <div class="menu">
+					<div class="header">Chosse the total of likes</div>
+					<div class="item">100 likes (- 100 points)</div>
+				 </div>
+			</div>
+		 </div>
+		 <div class="extra content">
+			Total Likes : {{totalLikes}}
+		 </div>
+	 </div>
+	</td>
+</tr>
+{{/each}}
+</table>
+</div>
+</template>

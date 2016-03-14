@@ -1,0 +1,20 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("/images/digital-signage-facebook-gradient-background.png") no-repeat;
+  background-size:2000px;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

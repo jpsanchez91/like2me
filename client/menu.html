@@ -1,0 +1,18 @@
+  <template name="menu">
+  {{> picture}}
+  <div class="item">
+    {{#if currentUser}} <img class="ui avatar image" src="http://graph.facebook.com/{{idFacebook}}/picture/?type=large">  {{name}} {{else}} Like4Face  {{/if}}
+	
+  </div>
+  {{#if currentUser}}
+  <div class="item">
+    <i class="trophy icon"></i> Pontos : {{pontos}}
+  </div>
+  <div class="item">
+    <button class="ui inverted black button" id="router-image"> Get Likes</button>
+  </div>
+  <div class="item">
+       <button class="ui inverted black button" id="logout">log out </button>
+  </div>
+  {{/if}}
+  </template>
