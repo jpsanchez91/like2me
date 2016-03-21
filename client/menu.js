@@ -12,8 +12,13 @@ Template.menu.events({'click #logout': function(event) {
 		
 						$('#modalimagem').modal('show');
 						
-	}
+	},
 	
+	
+	
+						
+						
+						
 						
 						});
 		

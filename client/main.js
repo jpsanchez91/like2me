@@ -18,13 +18,14 @@ Accounts.onLogin(function() {
 			usuarioFace : function() {
 			return Usuario.find({idFacebook : id}); }
 						});
+					
 						
 						Template.picture.helpers({
 		Pictures : function() {
 			return Picture.find({idFace: id}); }
 						});
 
-			
+			Deps.autorun(function() {UsuarioGlobal = Usuario.findOne({idFacebook : id});}); 
 			Router.go('/likes');			
 							
 		}

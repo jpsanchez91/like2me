@@ -4,33 +4,41 @@
   <div class="header">
     Utilize pontos
   </div>
-<table class="ui blue table">
+<div class="ui grid">
+<div class="ui two column grid">
+  <div class="row">
+
 {{#each Pictures}}
-<tr>
-	<td>
+
+  <div class="column">
 	<div class="ui card">
 		<div class="ui slide masked reveal image">
 			<img class="ui rounded image" src="{{link}}">
 		 </div>
 		 <div class="content">
-			<div class="ui icon top left pointing dropdown animated fade inverted blue  button" id="dropdownbutton" tabindex="0">
-				<div class="visible content">Chosse that picture</div>
-				<div class="hidden content">
-					Yes!
-				</div>
-				 <div class="menu">
-					<div class="header">Chosse the total of likes</div>
-					<div class="item">100 likes (- 100 points)</div>
-				 </div>
+						<div class="ui labeled input">
+				<div class="ui label">
+					likes <i class="thumbs outline up icon" ></i>
 			</div>
+			<input type="text" placeholder="total of likes" id="total{{_id}}">
+			</div>
+
+		    <br>
+			<br>
+
+			<button class="ui inverted blue button" onclick = "insereEscolhido('{{_id}}', document.getElementById('total{{_id}}').value)">Chosse that picture</button>
 		 </div>
 		 <div class="extra content">
 			Total Likes : {{totalLikes}}
 		 </div>
 	 </div>
-	</td>
-</tr>
+	 <br>
+	 <br>
+	</div>
 {{/each}}
-</table>
+
+</div>
+</div>
+</div>
 </div>
 </template>
