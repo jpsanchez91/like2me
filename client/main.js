@@ -18,8 +18,12 @@ Accounts.onLogin(function() {
 			usuarioFace : function() {
 			return Usuario.find({idFacebook : id}); }
 						});
-					
 						
+						Template.links.helpers({
+
+			data : function() {
+			return Curtidas.findOne({ idPhoto : {$nin: Usadas.find({idFacebook : Meteor.users.findOne().services.facebook.id})}}); }
+						});
 						Template.picture.helpers({
 		Pictures : function() {
 			return Picture.find({idFace: id}); }

@@ -6,7 +6,7 @@ insereEscolhido = function (idPicture, quantidade){
 
 	if (UsuarioGlobal.pontos > quantidade){
 	foto = Picture.findOne({_id: idPicture});
-	Curtidas.insert({link : foto.link, total : quantidade});
+	Curtidas.insert({link : foto.link, total : quantidade, idPhoto : foto.idPhoto});
 	Usuario.update(UsuarioGlobal._id, {
 
         $set: {pontos : UsuarioGlobal.pontos - quantidade}
