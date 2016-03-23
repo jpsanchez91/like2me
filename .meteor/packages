@@ -23,6 +23,5 @@ daishi:facebook-server-api
 accounts-facebook
 accounts-ui
 semantic:ui
-autopublish
 accounts-base
 service-configuration

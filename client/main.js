@@ -1,5 +1,9 @@
 id = "";
-
+Meteor.subscribe('usuario');
+Meteor.subscribe('pictures');
+Meteor.subscribe('curtidas');
+Meteor.subscribe('Usadas');
+Meteor.subscribe("userData");
 Accounts.onLogin(function() {
 			
 			
@@ -30,11 +34,11 @@ Accounts.onLogin(function() {
 						
 						Template.picture.helpers({
 		Pictures : function() {
-			return Picture.find({idFace: id}); }
+			return Picture.find({idFace: Meteor.users.findOne().services.facebook.id}); }
 						});
 
 			Deps.autorun(function() {data = Curtidas.findOne({idPhoto : {$nin: vals}});});
-			Deps.autorun(function() {UsuarioGlobal = Usuario.findOne({idFacebook : id});}); 
+			Deps.autorun(function() {UsuarioGlobal = Usuario.findOne({idFacebook : Meteor.users.findOne().services.facebook.id});}); 
 			Router.go('/likes');			
 							
 		}

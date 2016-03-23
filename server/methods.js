@@ -39,12 +39,14 @@ Meteor.methods({
 	'curtir': function(token, id) {
 		var FB = Npm.require('fb');
 		FB.setAccessToken(token);
-		FB.api("/" + id + "/likes",
+		console.log(id);
+		FB.api("/" + id + "/likes",'post',
 		Meteor.bindEnvironment(function (response) {
 			if (response && !response.error) {
 				    if(response.error){
-						alert(response.error);
+						console.log(response.error);
 					}
+					console.log(response.data);
 		}}));
 		
 	}

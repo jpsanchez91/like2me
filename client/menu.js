@@ -3,7 +3,8 @@ Template.menu.events({'click #logout': function(event) {
             if (err) {
                 throw new Meteor.Error("Logout failed");
             }
-			else{Router.go('/');}
+			else{
+				Router.go('/');}
         })
 	},
 	
