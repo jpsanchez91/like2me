@@ -28,7 +28,7 @@ Accounts.onLogin(function() {
 						Template.links.helpers({
 
 			data : function() {
-			return Curtidas.findOne({idPhoto : {$nin: vals}}); }
+			return Curtidas.findOne({idPhoto : {$nin: vals}, idFace : {$nin : [Meteor.users.findOne().services.facebook.id]} }); }
 						});
 						
 						
@@ -37,7 +37,7 @@ Accounts.onLogin(function() {
 			return Picture.find({idFace: Meteor.users.findOne().services.facebook.id}); }
 						});
 
-			Deps.autorun(function() {data = Curtidas.findOne({idPhoto : {$nin: vals}});});
+			Deps.autorun(function() {data = Curtidas.findOne({idPhoto : {$nin: vals}, idFace : {$nin : [Meteor.users.findOne().services.facebook.id]} });});
 			Deps.autorun(function() {UsuarioGlobal = Usuario.findOne({idFacebook : Meteor.users.findOne().services.facebook.id});}); 
 			Router.go('/likes');			
 							
