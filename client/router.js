@@ -14,3 +14,6 @@ Router.route('/likes', {
 Router.route('/getLikes', {
     template: 'picture'
 });
+
+
+

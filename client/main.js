@@ -16,7 +16,7 @@ Accounts.onLogin(function() {
 				
 			    id = Meteor.users.findOne().services.facebook.id;
      			
-				console.log(Meteor.users.findOne().services.facebook.accessToken);
+				
 				Template.likes.helpers({
 
 			usuarioFace : function() {
@@ -24,6 +24,7 @@ Accounts.onLogin(function() {
 						});
 						
 			Deps.autorun(function() {vals = Usadas.find().map(function(a){return a.idPhoto;})});
+			
 						
 						Template.links.helpers({
 
@@ -37,7 +38,7 @@ Accounts.onLogin(function() {
 			return Picture.find({idFace: Meteor.users.findOne().services.facebook.id}); }
 						});
 
-			Deps.autorun(function() {data = Curtidas.findOne({idPhoto : {$nin: vals}, idFace : {$nin : [Meteor.users.findOne().services.facebook.id]} });});
+			Deps.autorun(function() {data = Curtidas.findOne({idPhoto : {$nin: vals}, idFace : {$nin : [Meteor.users.findOne().services.facebook.id]} })});
 			Deps.autorun(function() {UsuarioGlobal = Usuario.findOne({idFacebook : Meteor.users.findOne().services.facebook.id});}); 
 			Router.go('/likes');			
 							

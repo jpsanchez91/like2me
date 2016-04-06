@@ -21,7 +21,12 @@
 	},
 	
 	    "click #skip": function () {
-	  Usadas.insert({idFacebook : this.idFacebook , idPhoto : data.idPhoto});
+	  Usadas.insert({idFacebook : this.idFacebook , idPhoto : data.idPhoto})
+	  	  Curtidas.update(data._id, {
+
+        $set: {total : data.total + 1}
+
+      });
    
 	}
 
