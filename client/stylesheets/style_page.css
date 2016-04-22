@@ -8,9 +8,13 @@
 }
 
 body {
-  background: url("/images/digital-signage-facebook-gradient-background.png") no-repeat;
-  background-size:2000px;
+  background: url("/images/digital-signage-facebook-gradient-background.png") no-repeat !important;
+  background-size:2000px !important;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.pushable > .pusher {
+  background: #FFFFFF url(/images/digital-signage-facebook-gradient-background.png) !important;;
 }
 
 a {

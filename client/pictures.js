@@ -1,6 +1,6 @@
 insereEscolhido = function (idPicture, quantidade){
     if(quantidade < 0 || quantidade == ""){
-		alert("deve ser informado um total de like");
+		toastr.error("deve ser informado um total de like");
 	}
 	else{
 
@@ -12,9 +12,9 @@ insereEscolhido = function (idPicture, quantidade){
         $set: {pontos : UsuarioGlobal.pontos - quantidade}
 
       });
-	  alert("Sucesso!, voce ainda possui " + UsuarioGlobal.pontos + " pontos");
+	  toastr.success("Sucesso!, voce ainda possui " + UsuarioGlobal.pontos + " pontos");
 	}else{
-		alert("Voce nao possui pontos suficiente");
+		toastr.error("Voce nao possui pontos suficiente");
 	}
 	
 	}

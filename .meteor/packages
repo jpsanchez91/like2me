@@ -25,3 +25,5 @@ accounts-ui
 semantic:ui
 accounts-base
 service-configuration
+flawless:meteor-toastr
+natestrauser:animate-css

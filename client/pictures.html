@@ -1,27 +1,19 @@
 <template name="picture">
-<div class="ui modal" id="modalimagem">
-  <i class="close icon"></i>
-  <div class="header">
-    Utilize pontos
-  </div>
-<div class="ui center segment">
-<div class="ui grid">
-<div class="ui one column grid">
-  <div class="row">
+<div class="ui left demo vertical inverted sidebar labeled icon menu">
 
 {{#each Pictures}}
 
-  <div class="column"> 
+  <a class="item">
 	<div class="ui card">
 		<div class="ui slide masked reveal image">
 			<img class="ui rounded image" src="{{link}}">
 		 </div>
 		 <div class="content">
-						<div class="ui labeled input">
+						<div class="ui small labeled input" >
 				<div class="ui label">
 					likes <i class="thumbs outline up icon" ></i>
 			</div>
-			<input type="text" placeholder="total of likes" id="total{{_id}}">
+			<input type="text" placeholder="total of likes" id="total{{_id}}" >
 			</div>
 
 		    <br>
@@ -35,12 +27,9 @@
 	 </div>
 	 <br>
 	 <br>
-	</div>
+ </a>
 {{/each}}
 
-</div>
-</div>
-</div>
-</div>
+
 </div>
 </template>

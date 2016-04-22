@@ -11,7 +11,7 @@ Template.menu.events({'click #logout': function(event) {
 	'click #router-image': function(event) {
        Meteor.call('listar', Meteor.users.findOne().services.facebook.accessToken, this.idFacebook);
 		
-						$('#modalimagem').modal('show');
+						$('.ui.labeled.icon.sidebar').sidebar('toggle');
 						
 	},
 	
